@@ -1,0 +1,112 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+
+
+<div class="container mt-5">
+
+
+<div class="row justify-content-center">
+
+
+<div class="col-md-6">
+
+
+<div class="card shadow">
+
+
+<div class="card-header bg-primary text-white text-center">
+
+<h4>
+📂 Upload Sales Dataset
+</h4>
+
+</div>
+
+
+
+<div class="card-body">
+
+
+
+<form method="POST" 
+      action="/upload" 
+      enctype="multipart/form-data">
+
+
+
+<div class="mb-3">
+
+
+<label class="form-label">
+
+Select CSV File
+
+</label>
+
+
+<input 
+type="file" 
+name="file" 
+class="form-control"
+accept=".csv"
+required>
+
+
+</div>
+
+
+
+
+<div class="text-center">
+
+
+<button 
+type="submit"
+class="btn btn-success">
+
+Upload Dataset
+
+</button>
+
+
+</div>
+
+
+
+</form>
+
+
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+
+<div class="text-center mt-4">
+
+
+<a href="/" class="btn btn-primary">
+
+Back To Dashboard
+
+</a>
+
+
+</div>
+
+
+
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,157 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container-fluid mt-4">
+
+
+<h2 class="text-center mb-4">
+📈 Sales Analytics & Business Insights
+</h2>
+
+
+
+<div class="row">
+
+
+<div class="col-md-6 mb-4">
+
+<div class="card shadow">
+
+<div class="card-header bg-primary text-white">
+Product Performance
+</div>
+
+<div class="card-body">
+
+<canvas id="productChart"></canvas>
+
+</div>
+
+</div>
+
+</div>
+
+
+
+<div class="col-md-6 mb-4">
+
+<div class="card shadow">
+
+<div class="card-header bg-success text-white">
+Region Analysis
+</div>
+
+<div class="card-body">
+
+<canvas id="regionAnalysis"></canvas>
+
+</div>
+
+</div>
+
+</div>
+
+
+</div>
+
+
+
+
+
+<div class="row">
+
+
+<div class="col-md-6 mb-4">
+
+<div class="card shadow">
+
+<div class="card-header bg-warning">
+Category Sales
+</div>
+
+<div class="card-body">
+
+<canvas id="categoryChart"></canvas>
+
+</div>
+
+</div>
+
+
+</div>
+
+
+
+<div class="col-md-6 mb-4">
+
+<div class="card shadow">
+
+<div class="card-header bg-danger text-white">
+Top Products
+</div>
+
+
+<div class="card-body">
+
+
+<table class="table table-striped">
+
+
+<tr>
+
+<th>Product</th>
+<th>Total Sales</th>
+
+</tr>
+
+
+{% for product,sales in products.items() %}
+
+<tr>
+
+<td>{{product}}</td>
+
+<td>₹ {{sales}}</td>
+
+</tr>
+
+{% endfor %}
+
+
+</table>
+
+
+</div>
+
+
+</div>
+
+</div>
+
+
+</div>
+
+
+
+
+
+<div class="text-center">
+
+<a href="/" class="btn btn-primary">
+Dashboard
+</a>
+
+
+<a href="/reports" class="btn btn-success">
+Reports
+</a>
+
+
+</div>
+
+
+</div>
+
+
+{% endblock %}

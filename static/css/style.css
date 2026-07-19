@@ -1,0 +1,29 @@
+body{
+    background:#f4f7fc;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+.navbar{
+    box-shadow:0 2px 10px rgba(0,0,0,.15);
+}
+
+.card{
+    border:none;
+    border-radius:15px;
+}
+
+.card-header{
+    font-weight:bold;
+}
+
+.btn{
+    border-radius:8px;
+}
+
+table{
+    background:white;
+}
+
+h2{
+    font-weight:bold;
+}

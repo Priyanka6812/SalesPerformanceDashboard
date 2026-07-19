@@ -1,0 +1,211 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container-fluid px-4">
+
+<h2 class="text-center mb-4">
+    📊 Sales Performance Analytics Dashboard
+</h2>
+
+
+<!-- KPI CARDS -->
+
+<div class="row">
+
+
+<div class="col-md-3 mb-4">
+<div class="card shadow border-0 bg-primary text-white">
+<div class="card-body text-center">
+<h6>Total Sales</h6>
+<h3>₹ {{ total_sales }}</h3>
+</div>
+</div>
+</div>
+
+
+<div class="col-md-3 mb-4">
+<div class="card shadow border-0 bg-success text-white">
+<div class="card-body text-center">
+<h6>Total Profit</h6>
+<h3>₹ {{ total_profit }}</h3>
+</div>
+</div>
+</div>
+
+
+<div class="col-md-3 mb-4">
+<div class="card shadow border-0 bg-warning">
+<div class="card-body text-center">
+<h6>Total Orders</h6>
+<h3>{{ total_orders }}</h3>
+</div>
+</div>
+</div>
+
+
+<div class="col-md-3 mb-4">
+<div class="card shadow border-0 bg-danger text-white">
+<div class="card-body text-center">
+<h6>Total Customers</h6>
+<h3>{{ total_customers }}</h3>
+</div>
+</div>
+</div>
+
+
+</div>
+
+
+
+<!-- TOP PRODUCT -->
+
+<div class="card shadow mb-4">
+
+<div class="card-body">
+
+<h5>
+🏆 Best Selling Product
+</h5>
+
+<h3>
+{{ top_product }}
+</h3>
+
+</div>
+
+</div>
+
+
+
+
+<!-- CHARTS -->
+
+<div class="row">
+
+
+<div class="col-md-6">
+
+<div class="card shadow">
+
+<div class="card-header">
+Monthly Sales Trend
+</div>
+
+<div class="card-body">
+
+<canvas id="salesChart"></canvas>
+
+</div>
+
+</div>
+
+</div>
+
+
+
+<div class="col-md-6">
+
+<div class="card shadow">
+
+<div class="card-header">
+Region Wise Sales
+</div>
+
+
+<div class="card-body">
+
+<canvas id="regionChart"></canvas>
+
+</div>
+
+
+</div>
+
+</div>
+
+
+</div>
+
+
+
+
+
+<!-- PRODUCT TABLE -->
+
+
+<div class="card shadow mt-4">
+
+
+<div class="card-header">
+Top Products
+</div>
+
+
+<div class="card-body">
+
+
+<table class="table table-bordered">
+
+
+<tr>
+
+<th>Product</th>
+<th>Sales</th>
+
+</tr>
+
+
+{% for product,sales in product_sales.items() %}
+
+<tr>
+
+<td>{{product}}</td>
+
+<td>
+₹ {{sales}}
+</td>
+
+</tr>
+
+
+{% endfor %}
+
+
+</table>
+
+
+</div>
+
+
+</div>
+
+
+
+
+<div class="text-center mt-4">
+
+
+<a href="/analytics" class="btn btn-primary">
+Analytics
+</a>
+
+
+<a href="/reports" class="btn btn-success">
+Reports
+</a>
+
+
+<a href="/upload" class="btn btn-warning">
+Upload Dataset
+</a>
+
+
+</div>
+
+
+
+</div>
+
+
+{% endblock %}

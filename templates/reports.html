@@ -1,0 +1,234 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+
+
+<div class="container-fluid mt-4">
+
+
+<h2 class="text-center mb-4">
+📑 Sales Performance Report
+</h2>
+
+
+
+<!-- KPI SUMMARY -->
+
+<div class="row">
+
+
+<div class="col-md-3 mb-4">
+
+<div class="card shadow bg-primary text-white">
+
+<div class="card-body text-center">
+
+<h5>Total Sales</h5>
+
+<h3>
+₹ {{ summary.Sales }}
+</h3>
+
+</div>
+
+</div>
+
+</div>
+
+
+
+
+<div class="col-md-3 mb-4">
+
+<div class="card shadow bg-success text-white">
+
+<div class="card-body text-center">
+
+<h5>Total Profit</h5>
+
+<h3>
+₹ {{ summary.Profit }}
+</h3>
+
+</div>
+
+</div>
+
+</div>
+
+
+
+
+<div class="col-md-3 mb-4">
+
+<div class="card shadow bg-warning">
+
+<div class="card-body text-center">
+
+<h5>Total Orders</h5>
+
+<h3>
+{{ summary.Orders }}
+</h3>
+
+</div>
+
+</div>
+
+</div>
+
+
+
+
+<div class="col-md-3 mb-4">
+
+<div class="card shadow bg-danger text-white">
+
+<div class="card-body text-center">
+
+<h5>Total Customers</h5>
+
+<h3>
+{{ summary.Customers }}
+</h3>
+
+</div>
+
+</div>
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+<!-- REPORT TABLE -->
+
+
+<div class="card shadow mt-4">
+
+
+<div class="card-header bg-dark text-white">
+
+Business Summary
+
+</div>
+
+
+<div class="card-body">
+
+
+<table class="table table-bordered">
+
+
+<tr>
+
+<th>Metric</th>
+
+<th>Value</th>
+
+</tr>
+
+
+
+<tr>
+
+<td>Total Sales</td>
+
+<td>
+₹ {{ summary.Sales }}
+</td>
+
+</tr>
+
+
+
+<tr>
+
+<td>Total Profit</td>
+
+<td>
+₹ {{ summary.Profit }}
+</td>
+
+</tr>
+
+
+
+<tr>
+
+<td>Total Orders</td>
+
+<td>
+{{ summary.Orders }}
+</td>
+
+</tr>
+
+
+
+<tr>
+
+<td>Total Customers</td>
+
+<td>
+{{ summary.Customers }}
+</td>
+
+</tr>
+
+
+</table>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+<!-- BUTTONS -->
+
+
+<div class="text-center mt-4">
+
+
+<a href="/" class="btn btn-primary">
+
+Dashboard
+
+</a>
+
+
+<a href="/analytics" class="btn btn-success">
+
+Analytics
+
+</a>
+
+
+<a href="/upload" class="btn btn-warning">
+
+Upload Dataset
+
+</a>
+
+
+
+</div>
+
+
+
+</div>
+
+
+{% endblock %}
